@@ -36,10 +36,10 @@ before_action :authenticate_user!
 
 \app\views\layouts\application.html.erb
 
-<% if user_signed_in? %>
-    <%= link_to "sign out",destroy_user_session_path, method: :delete   %>
-<% end %>
-<br>
+ <% if user_signed_in? %>
+     <%= link_to "sign out",destroy_user_session_path, method: :delete   %>
+ <% end %>
+ <br>
 
 
 terminal
@@ -99,7 +99,7 @@ terminal
 
 \app\controllers\statuses_controller.rb
 
-load_and_authorize_resource
+ load_and_authorize_resource
 
 
 Now test it.
