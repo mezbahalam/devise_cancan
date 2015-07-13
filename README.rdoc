@@ -5,7 +5,7 @@ terminal
  $ rails g scaffold status post:text
 
 
- \Gemfile:
+\Gemfile:
 gem 'devise'
 gem 'cancancan'
 
@@ -15,6 +15,7 @@ $ rails generate devise:install
 
 
  \config\environments\development.rb :
+ 
  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
 \config\routes.rb
@@ -30,9 +31,11 @@ $ rails generate devise:views
 
 
 \app\controllers\statuses_controller.rb
+
 before_action :authenticate_user!
 
 \app\views\layouts\application.html.erb
+
 <% if user_signed_in? %>
     <%= link_to "sign out",destroy_user_session_path, method: :delete   %>
 <% end %>
@@ -97,6 +100,7 @@ $ rake db:migrate
     end
 
 \app\controllers\statuses_controller.rb
+
 load_and_authorize_resource
 
 
