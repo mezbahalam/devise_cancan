@@ -1,24 +1,24 @@
 How to use devise and cancancan gem instraction:
 
-terminal
+ terminal
  $ rails new devise_cancan
  $ rails g scaffold status post:text
 
 
-\Gemfile:
-gem 'devise'
-gem 'cancancan'
+ \Gemfile:
+ gem 'devise'
+ gem 'cancancan'
 
 
-terminal
-$ rails generate devise:install
+ terminal
+ $ rails generate devise:install
 
 
- \config\environments\development.rb :
+  \config\environments\development.rb :
  
  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
- \config\routes.rb
+  \config\routes.rb
   root 'statuses#index'
 
 
@@ -34,7 +34,7 @@ $ rails generate devise:views
 
 before_action :authenticate_user!
 
-\app\views\layouts\application.html.erb
+ \app\views\layouts\application.html.erb
 
  <% if user_signed_in? %>
      <%= link_to "sign out",destroy_user_session_path, method: :delete   %>
@@ -48,7 +48,7 @@ terminal
  $ rake db:migrate
 
 
-\app\models\user.rb
+ \app\models\user.rb
   ROLES = %i[admin author]
 
   def roles=(roles)
@@ -67,7 +67,7 @@ terminal
   end
 
 
-\app\controller\application_controller.rb
+ \app\controller\application_controller.rb
   before_action :configure_permitted_parameters, if: :devise_controller?
   protected
 
@@ -77,7 +77,7 @@ terminal
 
 
 
-\app\views\devise\registrations\new.html.erb
+ \app\views\devise\registrations\new.html.erb
  <% for role in User::ROLES %>
    <%= check_box_tag "user[roles][#{role}]", role, @user.roles.include?(role), {:name => "user[roles][]"}%>
    <%= label_tag "user_roles_#{role}", role.to_s.humanize %><br />
@@ -86,7 +86,7 @@ terminal
 
 
 
-\app\models\ability.rb
+ \app\models\ability.rb
     user ||= User.new
     if user.has_role? :admin
       can :manage, :all
