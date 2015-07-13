@@ -97,7 +97,8 @@ How to use devise and cancancan gem instraction:
       can :read, :all
     end
 
-\app\controllers\statuses_controller.rb
+ 
+ \app\controllers\statuses_controller.rb
 
  load_and_authorize_resource
 
