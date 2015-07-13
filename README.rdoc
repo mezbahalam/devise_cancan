@@ -18,7 +18,7 @@ $ rails generate devise:install
  
  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
-\config\routes.rb
+ \config\routes.rb
   root 'statuses#index'
 
 
@@ -43,11 +43,9 @@ before_action :authenticate_user!
 
 
 terminal
-$ rails g cancan:ability
-
-
-$ rails generate migration add_roles_mask_to_users roles_mask:integer
-$ rake db:migrate
+ $ rails g cancan:ability
+ $ rails generate migration add_roles_mask_to_users roles_mask:integer
+ $ rake db:migrate
 
 
 \app\models\user.rb
@@ -80,11 +78,11 @@ $ rake db:migrate
 
 
 \app\views\devise\registrations\new.html.erb
-<% for role in User::ROLES %>
-  <%= check_box_tag "user[roles][#{role}]", role, @user.roles.include?(role), {:name => "user[roles][]"}%>
-  <%= label_tag "user_roles_#{role}", role.to_s.humanize %><br />
-<% end %>
-<%= hidden_field_tag "user[roles][]", "" %>
+ <% for role in User::ROLES %>
+   <%= check_box_tag "user[roles][#{role}]", role, @user.roles.include?(role), {:name => "user[roles][]"}%>
+   <%= label_tag "user_roles_#{role}", role.to_s.humanize %><br />
+ <% end %>
+ <%= hidden_field_tag "user[roles][]", "" %>
 
 
 
