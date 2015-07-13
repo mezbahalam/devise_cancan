@@ -22,17 +22,17 @@ How to use devise and cancancan gem instraction:
   root 'statuses#index'
 
 
-terminal
-$ rails generate devise User
+ terminal
+ $ rails generate devise User
+ 
+ $ rake db:migrate
+ 
+ $ rails generate devise:views
 
-$ rake db:migrate
 
-$ rails generate devise:views
+ \app\controllers\statuses_controller.rb
 
-
-\app\controllers\statuses_controller.rb
-
-before_action :authenticate_user!
+ before_action :authenticate_user!
 
  \app\views\layouts\application.html.erb
 
@@ -42,10 +42,10 @@ before_action :authenticate_user!
  <br>
 
 
-terminal
- $ rails g cancan:ability
- $ rails generate migration add_roles_mask_to_users roles_mask:integer
- $ rake db:migrate
+  terminal
+  $ rails g cancan:ability
+  $ rails generate migration add_roles_mask_to_users roles_mask:integer
+  $ rake db:migrate
 
 
  \app\models\user.rb
