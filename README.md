@@ -122,7 +122,7 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
    elsif user.has_role? :author
      can :create, Status # author can create status
      can :update, Status # author can update status
-     # can :destroy # #uncomment this line, author can destroy status 
+     # can :destroy, Status # #uncomment this line, author can destroy status 
      can :read, :all
    else
      can :read, :all
