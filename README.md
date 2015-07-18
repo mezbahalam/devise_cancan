@@ -8,6 +8,7 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 ##### First Step
 ###### create a new rails app
  *terminal*
+ 
  `$ rails new devise_cancan `
  
  `$ rails g scaffold status post:text`
@@ -23,6 +24,7 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 ##### Second Step
 ###### setup devise
  *terminal*
+ 
   `$ rails generate devise:install`
 
 
@@ -36,6 +38,7 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
   root 'statuses#index'
  ```
 *terminal*
+
  `$ rails generate devise User`
  
  `$ rake db:migrate`
