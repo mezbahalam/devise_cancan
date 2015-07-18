@@ -58,8 +58,9 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
  <br>
  ```
  
- ##### Third step
- ###### setup cancancan abilities:
+##### Third step
+
+###### setup cancancan abilities:
 
  *terminal*
  
