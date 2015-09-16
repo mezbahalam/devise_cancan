@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
 
  
-  #   resources :photos, concerns: :toggleable
+  
 
   # Example resource route within a namespace:
   #   namespace :admin do
